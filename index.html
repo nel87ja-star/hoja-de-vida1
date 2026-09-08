@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Hoja de vida profesional de Alex Rivera, estratega digital y diseñador de experiencias.">
+	<title>Alex Rivera | Estratega digital</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #17211f;
+			--muted: #66716e;
+			--paper: #f4f1e9;
+			--surface: #fffdf8;
+			--line: #d9ddd5;
+			--lime: #c8ef75;
+			--coral: #ee775e;
+			--night: #243634;
+			--mono: "DM Mono", monospace;
+			--sans: "Manrope", sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--paper);
+			font-family: var(--sans);
+			line-height: 1.6;
+		}
+		a { color: inherit; text-decoration: none; }
+		.shell { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+		.eyebrow {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: var(--muted);
+			font: 500 0.72rem var(--mono);
+			letter-spacing: .08em;
+			text-transform: uppercase;
+		}
+		.eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--coral); }
+
+		header {
+			padding: 24px 0;
+			border-bottom: 1px solid var(--line);
+		}
+		.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+		.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.04em; }
+		.brand-mark {
+			display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%;
+			background: var(--ink); color: var(--lime); font: 500 .9rem var(--mono);
+		}
+		.nav-links { display: flex; gap: 30px; color: var(--muted); font-size: .84rem; }
+		.nav-links a { transition: color .2s ease; }
+		.nav-links a:hover { color: var(--coral); }
+		.nav-cta {
+			padding: 10px 16px; border: 1px solid var(--ink); border-radius: 2px;
+			font-size: .78rem; font-weight: 700; transition: .2s ease;
+		}
+		.nav-cta:hover { background: var(--ink); color: var(--lime); }
+
+		.hero { padding: 76px 0 84px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; }
+		h1 { max-width: 720px; margin: 18px 0 25px; font-size: clamp(3.6rem, 8vw, 7.1rem); line-height: .94; letter-spacing: -.085em; }
+		h1 em { color: var(--coral); font-style: normal; }
+		.hero-copy { max-width: 530px; color: var(--muted); font-size: 1.05rem; }
+		.hero-actions { display: flex; align-items: center; gap: 18px; margin-top: 32px; }
+		.button {
+			display: inline-flex; align-items: center; gap: 10px; padding: 14px 19px;
+			border: 1px solid var(--ink); background: var(--ink); color: var(--surface);
+			border-radius: 2px; font-size: .82rem; font-weight: 800; cursor: pointer; transition: .2s ease;
+		}
+		.button:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-2px); }
+		.button.light { background: transparent; color: var(--ink); }
+		.button.light:hover { background: var(--lime); border-color: var(--lime); }
+		.button span { font-size: 1.1rem; line-height: 0; }
+		.portrait-wrap { position: relative; padding: 0 22px 22px 0; }
+		.portrait-wrap::after { content: ""; position: absolute; right: 0; bottom: 0; width: 72%; height: 72%; background: var(--lime); z-index: -1; }
+		.portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(100%); }
+		.availability { position: absolute; bottom: 40px; left: -22px; display: flex; align-items: center; gap: 9px; padding: 10px 13px; background: var(--surface); border: 1px solid var(--line); font: 500 .68rem var(--mono); text-transform: uppercase; }
+		.availability i { width: 8px; height: 8px; border-radius: 50%; background: #62a94d; }
+
+		.numbers { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+		.number { padding: 25px 0; border-right: 1px solid var(--line); }
+		.number:not(:first-child) { padding-left: 30px; }
+		.number:last-child { border-right: 0; }
+		.number strong { display: block; font-size: 2.1rem; letter-spacing: -.07em; }
+		.number span { color: var(--muted); font: .68rem var(--mono); text-transform: uppercase; }
+
+		section { padding: 110px 0; }
+		.section-heading { display: grid; grid-template-columns: .6fr 1.4fr; gap: 30px; margin-bottom: 52px; }
+		h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -.07em; }
+		.section-intro { max-width: 440px; color: var(--muted); }
+		.timeline { border-top: 1px solid var(--line); }
+		.role { display: grid; grid-template-columns: 1fr 2fr .8fr; gap: 25px; padding: 27px 0; border-bottom: 1px solid var(--line); }
+		.role h3 { margin: 0 0 4px; font-size: 1.05rem; }
+		.role p { margin: 0; color: var(--muted); font-size: .88rem; }
+		.role time { color: var(--muted); font: .72rem var(--mono); text-align: right; }
+		.skills-area { background: var(--night); color: var(--surface); }
+		.skills-area .eyebrow { color: #aabbb4; }
+		.skills-area h2 { color: var(--surface); }
+		.skills-area .section-intro { color: #bdc9c3; }
+		.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #53645e; }
+		.skill { min-height: 210px; padding: 25px; background: var(--night); }
+		.skill-number { color: var(--lime); font: .7rem var(--mono); }
+		.skill h3 { margin: 54px 0 8px; font-size: 1.2rem; }
+		.skill p { margin: 0; color: #bdc9c3; font-size: .84rem; }
+		.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; }
+		.contact h2 { max-width: 530px; }
+		.contact-detail { padding-bottom: 5px; }
+		.contact-detail p { margin: 0 0 7px; color: var(--muted); font-size: .77rem; }
+		.contact-detail a { display: block; width: fit-content; border-bottom: 1px solid var(--coral); font-size: 1.15rem; font-weight: 700; }
+		.socials { display: flex; gap: 20px; margin-top: 28px; color: var(--muted); font: .72rem var(--mono); }
+		.socials a:hover { color: var(--coral); }
+		footer { padding: 22px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font: .68rem var(--mono); display: flex; justify-content: space-between; }
+		#toast { position: fixed; bottom: 24px; left: 50%; padding: 11px 16px; background: var(--ink); color: var(--lime); font: .72rem var(--mono); transform: translate(-50%, 80px); transition: transform .25s ease; z-index: 5; }
+		#toast.show { transform: translate(-50%, 0); }
+		@media (max-width: 760px) {
+			.shell { width: min(100% - 32px, 560px); }
+			header { padding: 18px 0; }
+			.nav-links { display: none; }
+			.hero { grid-template-columns: 1fr; gap: 42px; padding: 58px 0 65px; }
+			h1 { font-size: clamp(3.4rem, 17vw, 5.8rem); }
+			.portrait-wrap { max-width: 390px; margin: 0 auto; }
+			.numbers { grid-template-columns: 1fr 1fr; }
+			.number { padding: 18px 0; }
+			.number:last-child { grid-column: span 2; border-top: 1px solid var(--line); padding-left: 0; }
+			section { padding: 75px 0; }
+			.section-heading, .contact { grid-template-columns: 1fr; gap: 20px; }
+			.role { grid-template-columns: 1fr; gap: 8px; }
+			.role time { text-align: left; }
+			.skills { grid-template-columns: 1fr; }
+			.skill { min-height: 165px; }
+			.skill h3 { margin-top: 35px; }
+			footer { gap: 14px; flex-direction: column; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="shell nav">
+			<a class="brand" href="#inicio"><span class="brand-mark">AR</span> Alex Rivera</a>
+			<nav class="nav-links" aria-label="Navegación principal">
+				<a href="#perfil">Perfil</a>
+				<a href="#experiencia">Experiencia</a>
+				<a href="#contacto">Contacto</a>
+			</nav>
+			<a class="nav-cta" href="#contacto">Hablemos ↗</a>
+		</div>
+	</header>
+
+	<main id="inicio">
+		<section class="shell hero">
+			<div>
+				<div class="eyebrow">Estrategia · Diseño · Impacto</div>
+				<h1>Ideas claras para <em>marcas</em> que avanzan.</h1>
+				<p class="hero-copy">Soy Alex Rivera, estratega digital con 8 años convirtiendo retos de negocio en experiencias simples, útiles y memorables.</p>
+				<div class="hero-actions">
+					<a class="button" href="#experiencia">Conoce mi recorrido <span>↓</span></a>
+					<button class="button light" id="copy-email" type="button">Copiar email <span>↗</span></button>
+				</div>
+			</div>
+			<div class="portrait-wrap">
+				<img class="portrait" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85" alt="Retrato profesional de Alex Rivera">
+				<div class="availability"><i></i> Disponible para proyectos</div>
+			</div>
+		</section>
+
+		<div class="shell numbers" aria-label="Resumen profesional">
+			<div class="number"><strong>08</strong><span>Años de experiencia</span></div>
+			<div class="number"><strong>32</strong><span>Proyectos entregados</span></div>
+			<div class="number"><strong>11</strong><span>Marcas transformadas</span></div>
+		</div>
+
+		<section class="shell" id="perfil">
+			<div class="section-heading">
+				<div class="eyebrow">Perfil</div>
+				<div><h2>Diseño con criterio. Estrategia con propósito.</h2><p class="section-intro">Trabajo en la intersección entre lo que las personas necesitan y lo que las organizaciones quieren lograr. Mi enfoque combina investigación, pensamiento visual y ejecución práctica.</p></div>
+			</div>
+		</section>
+
+		<section class="shell" id="experiencia">
+			<div class="section-heading">
+				<div class="eyebrow">Experiencia</div>
+				<div><h2>Un recorrido hecho de preguntas buenas.</h2></div>
+			</div>
+			<div class="timeline">
+				<article class="role"><div><h3>Lead Digital Strategist</h3><p>Estudio Norte · Madrid</p></div><p>Liderazgo de estrategia y diseño para productos digitales B2B. Creación de equipos, procesos y sistemas de marca.</p><time>2021 — Hoy</time></article>
+				<article class="role"><div><h3>Senior UX Designer</h3><p>Fintech Alba · Remoto</p></div><p>Diseño de experiencias financieras accesibles para más de 200.000 usuarios en Latinoamérica.</p><time>2018 — 2021</time></article>
+				<article class="role"><div><h3>Diseñador de producto</h3><p>Colectivo Siete · Bogotá</p></div><p>Prototipos, investigación y dirección de arte para startups en etapa de crecimiento.</p><time>2016 — 2018</time></article>
+			</div>
+		</section>
+
+		<section class="skills-area" id="habilidades">
+			<div class="shell">
+				<div class="section-heading"><div class="eyebrow">Lo que hago</div><div><h2>De la pregunta al resultado.</h2><p class="section-intro">Herramientas y prácticas que uso para hacer que las ideas lleguen más lejos.</p></div></div>
+				<div class="skills">
+					<article class="skill"><span class="skill-number">01 / 03</span><h3>Estrategia digital</h3><p>Posicionamiento, voz de marca, journeys y roadmaps accionables.</p></article>
+					<article class="skill"><span class="skill-number">02 / 03</span><h3>Diseño de experiencias</h3><p>Interfaces, prototipos y sistemas que hacen fácil lo complejo.</p></article>
+					<article class="skill"><span class="skill-number">03 / 03</span><h3>Facilitación</h3><p>Talleres que alinean equipos y convierten conversaciones en decisiones.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="shell contact" id="contacto">
+			<div><div class="eyebrow">Siguiente capítulo</div><h2>¿Tienes un reto interesante?</h2></div>
+			<div class="contact-detail"><p>ESCRÍBEME DIRECTAMENTE</p><a href="mailto:hola@alexrivera.studio">hola@alexrivera.studio</a><div class="socials"><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance ↗</a><a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram ↗</a></div></div>
+		</section>
+	</main>
+	<footer class="shell"><span>© 2024 Alex Rivera</span><span>Hecho con intención · Bogotá / Madrid</span></footer>
+	<div id="toast" role="status" aria-live="polite">Email copiado</div>
+	<script>
+		const copyButton = document.getElementById('copy-email');
+		const toast = document.getElementById('toast');
+		copyButton.addEventListener('click', async () => {
+			const email = 'hola@alexrivera.studio';
+			if (navigator.clipboard) {
+				await navigator.clipboard.writeText(email);
+			} else {
+				const helper = document.createElement('textarea');
+				helper.value = email;
+				document.body.appendChild(helper);
+				helper.select();
+				document.execCommand('copy');
+				helper.remove();
+			}
+			toast.classList.add('show');
+			setTimeout(() => toast.classList.remove('show'), 2200);
+		});
+	</script>
+</body>
+</html>
